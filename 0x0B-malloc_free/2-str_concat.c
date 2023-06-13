@@ -2,42 +2,48 @@
 #include <stdlib.h>
 
 /**
- * str_concat - get ends of input and add together for size
- * @s1: input one to concat
- * @s2: input two to concat
- * Return: concat of s1 and s2
+ * str_concat - it concatenates two strings.
+ *
+ * @s1: refers string one
+ * @s2: refers string two
+ *
+ * Return: it returns NULL on failure
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *concat;
-	int i, ci;
+	unsigned int i, j, q, r;
+	char *s;
 
 	if (s1 == NULL)
-		s1 = "";
+	{
+		i = 0;
+	}
+	else
+	{
+		for (i = 0; s1[i]; ++i)
+			;
+
+	}
 	if (s2 == NULL)
-
-		s2 = "";
-		i = ci = 0;
-		while (s1[i] != '\0')
-			i++;
-		while (s2[ci] != '\0')
-			ci++;
-		concat = malloc(sizeof(char) * (i + ci + 1));
-		if (concat == NULL)
-			return (NULL);
-		i = ci = 0;
-		while (s1[i] != '\0')
+	{
+		j = 0;
+	}
+	else
+	{
+		for (j = 0; s2[j]; ++j)
 		{
-			concat[i] = s1[i];
-			i++;
+			;
 		}
+	}
+	q = i + j + 1;
+	s = malloc(q * sizeof(char));
+	if (s == NULL)
+		return (NULL);
 
-		while (s2[ci] != '\0')
-		{
-			concat[i] = s1[ci];
-			i++, ci++;
-		}
-
-		concat[i] = '\0';
-		return (concat);
+	for (r = 0; r < i; ++r)
+		s[r] = s1[r];
+	for  (r = 0; r < j; ++r)
+		s[r + i] = s2[r];
+	s[i + j] = '\0';
+	return (s);
 }
