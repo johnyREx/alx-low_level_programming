@@ -1,17 +1,12 @@
 #include <stdio.h>
 
-void pre_main(void) __attribute__((constructor));
-
 /**
- * pre_main - Function executed before the main function.
+ * first - function executed before main
+ * Return: no return.
  */
 
-void pre_main(void)
+void __attribute__ ((constructor)) first()
 {
-	printf("You're beat! and yet, you must all,\nI bore my house upon my back!\n");
-}
-
-int main(void)
-{
-	return (0);
+	printf("You're beat! and yet, you must allow");
+	printf(",\nI bore my house upon my back!\n");
 }
