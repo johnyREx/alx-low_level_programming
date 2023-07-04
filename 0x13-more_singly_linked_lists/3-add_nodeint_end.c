@@ -6,6 +6,8 @@
  * @head: A pointer to the head of list
  * @n: The integer to be added to the new node
  * Return: The address of the new elements, or NULL on failure.
+ *
+ * Description: this function creates a new node with the given integer.
  */
 
 listint_t *add_nodeint_end(listint_t **head, const int n)
